@@ -1,0 +1,31 @@
+{
+  "subtitle": "Our team",
+  "title": "Meet our friendly team of professionals.",
+  "description": "We are talented individuals who are passionate about bringing ideas to life...",
+  "more": {
+    "label": "Our team",
+    "link": "/team"
+  },
+  "items": [
+    {
+      "image": "img/team/1.jpg",
+      "name": "Yasir Khan",
+      "role": "Co-Chief Executive Officer"
+    },
+    {
+      "image": "img/team/2.jpg",
+      "name": "Ehtisham Ilyas",
+      "role": "Driving Woltrio "
+    },
+    {
+      "image": "img/team/3.jpg",
+      "name": "Awon Ali",
+      "role": "Maintenance Reliability Engineer"
+    },
+    {
+      "image": "img/team/4.jpeg",
+      "name": "Adil Janjua",
+      "role": "HR Manager & Businness Development"
+    }
+  ]
+}
