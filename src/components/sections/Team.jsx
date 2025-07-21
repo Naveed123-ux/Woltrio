@@ -1,6 +1,5 @@
 import Data from "@data/sections/team.json";
 import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 const TeamSection = () => {
   return (
