@@ -487,9 +487,13 @@ color backgrounds
 }
 
 .mil-dark-bg {
-  background-color: $dark;
+  background-color: #000000;
 }
-
+.nameOfcountry {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
 .mil-gray-bg {
   background-color: $gs-10;
 }

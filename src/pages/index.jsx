@@ -10,6 +10,7 @@ import ServicesSection from "@components/sections/Services";
 import TeamSection from "@components/sections/Team";
 import VideoSection from "@components/sections/Video";
 import SubscribeSection from "@components/sections/Subscribe";
+import Contact from "../components/Contact";
 import LatestPostsSection from "@components/sections/LatestPosts";
 import AboutTwoSection from "@components/sections/AboutTwo";
 import TechSection from "@components/sections/Tech";
@@ -24,12 +25,13 @@ const Home1 = (props) => {
     <Layouts transparent>
       <HeroOneSection />
       <AboutSection />
-      <TechSection />
+      {/* <TechSection /> */}
       <ServicesSection />
       {/* <AboutTwoSection /> */}
       <TeamSection />
-      <VideoSection />
+      {/* <VideoSection /> */}
       <TestimonialSlider />
+      <Contact />
       {/* <LatestPostsSection posts={props.posts} /> */}
       <SubscribeSection />
     </Layouts>

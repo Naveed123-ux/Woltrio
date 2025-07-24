@@ -22,7 +22,7 @@ const TeamSection = () => {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row justify-content-center">
           {Data.items.map((item, key) => (
             <div className="col-md-6 col-xl-3" key={`team-item-${key}`}>
               {/* team card */}

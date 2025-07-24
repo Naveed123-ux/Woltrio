@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         {/* seo begin */}
         <title>Woltrio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/img/hero/logo.png" />
+        <link rel="icon" href="img/hero/logo.png" />
         {/* seo end */}
       </Head>
       <Component {...pageProps} />

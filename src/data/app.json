@@ -8,7 +8,7 @@
   },
   "header": {
     "logo": {
-      "image": "img/hero/logo.png"
+      "image": "img/LogoDark.svg"
     },
     "menu": [
       {
@@ -194,11 +194,6 @@
       "link": "https://github.com/woltrio/",
       "icon": "fab fa-github",
       "title": "GitHub"
-    },
-    {
-      "link": "https://twitter.com",
-      "icon": "fab fa-twitter",
-      "title": "Twitter"
     }
   ]
 }

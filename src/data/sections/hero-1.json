@@ -10,42 +10,42 @@
   "image": "img/hero/2.jpg",
   "partners": [
     {
-      "image": "img/partners/1.svg",
+      "image": "RiReactjsFill",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/2.svg",
+      "image": "IoLogoJavascript",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/3.svg",
+      "image": "RiTailwindCssFill",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/4.svg",
+      "image": "SiPython",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/5.svg",
+      "image": "SiTypescript",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/6.svg",
+      "image": "SiPhp",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/7.svg",
+      "image": "SiDocker",
       "link": "#.",
       "alt": "logo"
     },
     {
-      "image": "img/partners/8.svg",
+      "image": "SiAmazonaws",
       "link": "#.",
       "alt": "logo"
     }

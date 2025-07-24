@@ -44,36 +44,30 @@ export const sliderProps = {
     speed: 3000,
     autoplay: true,
     autoplay: {
-        delay: 0,
+      delay: 0,
     },
     loop: true,
     freeMode: true,
     breakpoints: {
-        992: {
-            slidesPerView: 6,
-        },
-        768: {
-            slidesPerView: 3,
-        },
+      992: {
+        slidesPerView: 6,
+      },
+      768: {
+        slidesPerView: 3,
+      },
     },
     wrapperClass: "mil-instagram",
   },
   milInfinitySlider: {
-    slidesPerView: 2,
-    spaceBetween: 0,
-    speed: 3000,
-    autoplay: true,
-    autoplay: {
-        delay: 0,
-    },
     loop: true,
-    freeMode: true,
-    breakpoints: {
-        992: {
-            slidesPerView: 4,
-        },
+    slidesPerView: "5",
+    spaceBetween: 3, // reduce space
+    speed: 4000, // slower transition
+    autoplay: {
+      delay: 0, // no delay between loops
+      disableOnInteraction: false,
     },
-    wrapperClass: "mil-partners mil-partners-slider mil-partners-with-hover",
+    freeMode: true,
   },
   milReviSlider: {
     slidesPerView: 1,
@@ -82,13 +76,13 @@ export const sliderProps = {
     touchStartPreventDefault: false,
     longSwipes: true,
     pagination: {
-        el: ".mil-slider-pagination",
-        clickable: true,
+      el: ".mil-slider-pagination",
+      clickable: true,
     },
     breakpoints: {
-        992: {
-            slidesPerView: 2,
-        },
+      992: {
+        slidesPerView: 2,
+      },
     },
     wrapperClass: "swiper-wrapper mil-icon-1-trigger",
   },
@@ -100,13 +94,13 @@ export const sliderProps = {
     touchStartPreventDefault: false,
     longSwipes: true,
     navigation: {
-        prevEl: '.mil-about-prev',
-        nextEl: '.mil-about-next',
+      prevEl: ".mil-about-prev",
+      nextEl: ".mil-about-next",
     },
     breakpoints: {
-        992: {
-            slidesPerView: 2,
-        },
+      992: {
+        slidesPerView: 2,
+      },
     },
   },
   milGallerySlider: {
@@ -117,9 +111,9 @@ export const sliderProps = {
     touchStartPreventDefault: false,
     longSwipes: true,
     breakpoints: {
-        992: {
-            slidesPerView: 2,
-        },
+      992: {
+        slidesPerView: 2,
+      },
     },
-  }
+  },
 };

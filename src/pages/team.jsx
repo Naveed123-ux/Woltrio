@@ -18,12 +18,7 @@ const Team = () => {
       {
         image: "img/team/2.jpg",
         name: "Ehtisham Ilyas",
-        role: "Driving Woltrio ",
-      },
-      {
-        image: "img/team/3.jpg",
-        name: "Awon Ali",
-        role: "Maintenance Reliability Engineer",
+        role: "Director Of Woltrio ",
       },
     ],
     hr: [

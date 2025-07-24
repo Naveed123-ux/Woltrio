@@ -21,7 +21,7 @@ const DefaultHeader = ({ transparent, invert, extraClass }) => {
     <div
       className={`mil-top-panel${transparent ? " mil-transparent-nav" : ""}${
         !invert ? " mil-invert-nav" : ""
-      } mil-animated ${extraClass ? extraClass : ""}`}
+      } mil-animated ${extraClass ? extraClass : ""} bg-black`}
     >
       <div className="container">
         <Link href="/" legacyBehavior>
@@ -33,7 +33,7 @@ const DefaultHeader = ({ transparent, invert, extraClass }) => {
               src={appData.header.logo.image}
               alt="Logo"
               className="mil-logo-image"
-              style={{ maxHeight: "50px" }}
+              style={{}}
             />
           </a>
         </Link>
