@@ -1,5 +1,5 @@
-import Footer_li from "../components/Footer/Footer_Li"; // Corrected path if needed, assuming they are siblings now
-import Li2 from "./Footer/Li2"; // Corrected path
+import Footer_li from "../components/Footer/Footer_li"; // Corrected path if needed, assuming they are siblings now
+import Li2 from "../components/Footer/Li2"; // Corrected path
 
 import { useEffect } from "react";
 import AOS from "aos";
