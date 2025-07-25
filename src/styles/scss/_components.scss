@@ -807,12 +807,19 @@ fields
 }
 
 %label-movement {
-  color: $accent-1;
   top: 0;
   font-size: 9px;
   left: 0;
 }
-
+.form-check-2 {
+  width: 17px;
+  height: 17px;
+}
+.form-check-1 {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
 input,
 textarea {
   width: 100%;
@@ -872,7 +879,11 @@ textarea {
 reviews
 
 ***************************/
-
+.form-label-bold {
+  font-weight: 600;
+  font-size: 16px;
+  color: $black;
+}
 .mil-review {
   padding: 30px;
   background-color: $light;
