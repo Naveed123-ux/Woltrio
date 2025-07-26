@@ -1,131 +1,207 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 import Layouts from "@layouts/Layouts";
 
-import { getSortedProjectsData } from "@library/projects";
-
-import 'photoswipe/dist/photoswipe.css'
-import 'react-modal-video/css/modal-video.css'
-
-import { Gallery, Item } from 'react-photoswipe-gallery'
-import ModalVideo from 'react-modal-video'
-
 import Link from "next/link";
 
-const Portfolio = (props) => {
+import AOS from "aos";
 
-  const rows = [];
-  const projectsGrid = [];
+import { useEffect } from "react";
+import ProjectCard from "../components/ProjectCard";
 
-  for (var i = 0; i < props.projects.length; i += 5 ) {
-    rows.push(props.projects.slice(i, 5 + i));
-  }
+// import ButtonD from "../components/button/UniqueButtonD";
+import Button from "../components/button/UniqueButton";
 
-  rows.forEach( (row) => {
-    let row_rows = [];
-    row_rows.push(row.slice(0, 1));
-    row_rows.push(row.slice(1, 5));
+const Portfolio = () => {
+  const projects = [
+    {
+      imgpath: "/img/Projects/medcare.com.png",
+      title: "MedCare . Medical Management system.",
+      detail:
+        "Woltrio engineered MedCare as a comprehensive medical management system, streamlining patient care, appointments, and records with secure, scalable technology.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
+      liveSite: "https://example.com",
+      gitRepo: "https://github.com/example",
+    },
+    {
+      imgpath: "/img/Projects/Wound-app.png",
+      title: "Wound App",
+      detail:
+        "Woltrio developed Wound App to simplify wound tracking and support better healing through smart digital care.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
+      liveSite: "https://example.com",
+      gitRepo: "https://github.com/example",
+    },
+    {
+      imgpath: "/img/Projects/demo-denji.png",
+      title: "Demo Denji App",
+      detail:
+        "Woltrio developed Demo Denji App to simplify wound tracking and support better healing through smart digital care.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
+      liveSite: "https://example.com",
+      gitRepo: "https://github.com/example",
+    },
+    {
+      imgpath: "/img/Projects/yourstudio.io_.png",
+      title: "YourStudio.io",
+      detail:
+        "Woltrio harnesses cutting-edge technologies to craft innovative solutions, empowering businesses with tailored software experiences.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
 
-    projectsGrid.push(row_rows);
-  })
+      liveSite: "https://yourstudio.io/",
+    },
+    {
+      imgpath: "/img/Projects/aelapro.ia.png",
+      title: "Aela.ai",
+      detail:
+        "Woltrio drives digital transformation by delivering custom software solutions that meet the unique demands of modern enterprises.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
 
-  const [isOpen, setOpen] = useState(false);
+      liveSite: "https://app.aelapro.ai/",
+      gitRepo: "https://github.com/example",
+    },
 
-  const [modalURL, setModalURL] = useState(false);
+    {
+      imgpath: "/img/Projects/trands.png",
+      title: "TrendSetGO",
+      detail:
+        "Woltrio created TrendSetGO as a trendsetting e-commerce platform, blending sleek design with powerful analytics to elevate online shopping and business insights.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
 
-  const openSingleModalVideo = (e) => {
-    setModalURL(e.target.getAttribute('data-href'));
-    setOpen(true);
-  }
-
+      liveSite: "https://app.aelapro.ai/",
+      gitRepo: "https://github.com/example",
+    },
+    {
+      imgpath: "/img/Projects/point-sign.png",
+      title: "Point Signs",
+      detail:
+        "Woltrio developed Point Signs as a digital signage solution, delivering dynamic content management and real-time updates for impactful visual communication.",
+      tools: [
+        "fa-brands fa-react",
+        "fa-brands fa-node",
+        "fa-brands fa-js",
+        "fa-brands fa-css3",
+      ],
+      liveSite: "https://example.com",
+      gitRepo: "https://github.com/example",
+    },
+  ];
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: "ease",
+      offset: 120,
+    });
+  }, []);
   return (
     <Layouts>
-      
-      <div className="mil-spacer-100 mil-spacer-dark" />
-
-      {/* portfolio */}
-      <div className="mil-portfolio-fw mil-appearance">
-        <Gallery>
-          {projectsGrid.map((row, row_i) => (
-          <div className={ ( ( row_i % 2 ) == 0 ) ? "row m-0" : "row m-0 flex-row-reverse" } key={`portfolio-row-${row_i}`}>
-              {row.map((col, col_i) => (
-              <div className="col-lg-6 p-0" key={`portfolio-row-${row_i}-col-${col_i}`}>
-                  <div className="row m-0">
-                    
-                    {col.map((item, key) => (
-                    <div className={ ( col_i == 0 ) ? "col-lg-12 p-0" : "col-lg-6 p-0" } key={`portfolio-row-${row_i}-col-${col_i}-item-${key}`}>
-                      <div className="mil-portfolio-item">
-
-                        <div className="mil-cover mil-square mil-scale-down-trigger mil-accent-trigger">
-                            <div className="mil-image-frame">
-                                {item.type != "video" &&
-                                <img src={item.image} alt={item.title} />
-                                }
-                                {item.type == "video" &&
-                                <video className="mil-video-background" data-value="1.2" autoPlay="autoplay" loop="loop" muted="true" playsInline="true" onContextMenu={(e)=> e.preventDefault()} preload="auto">
-                                    <source src={item.image} />
-                                </video>
-                                }
-                            </div>
-                        </div>
-                        <Link href={`portfolio/${item.id}`} className="mil-item-description mil-icon-2-trigger mil-accent-trigger">
-                            <div className="mil-text-bg mil-mb-5">
-                                <h5 className="mil-light">{item.title}</h5>
-                            </div>
-                            <br />
-                            <div className="mil-text-bg">
-                                <p className="mil-link mil-accent">{item.category}</p>
-                            </div>
-                        </Link>
-                        
-                        {item.type != "video" &&
-                        <Item
-                          original={item.image}
-                          thumbnail={item.image}
-                          width={item.imageWidth}
-                          height={item.imageHeight}
-                        >
-                        {({ ref, open }) => (
-                        <a data-fancybox="gallery" ref={ref} onClick={open} data-no-swup className="mil-zoom-icon mil-hidden-trigger" style={{ "cursor" : "pointer" }}>
-                            <img src="/img/icons/zoom.svg" alt="zoom" />
-                        </a>
-                        )}
-                        </Item>
-                        }
-                        {item.type == "video" &&
-                        <>
-                          <a data-fancybox="gallery" data-href={item.image} onClick={openSingleModalVideo} data-no-swup className="mil-zoom-icon mil-hidden-trigger" style={{ "cursor" : "pointer" }}>
-                              <img src="/img/icons/zoom.svg" alt="zoom" />
-                          </a>
-                        </>
-                        }
-                      </div>
-                    </div>
-                    ))}
-                
-                </div>
-
+      <div>
+        <div className="col-md-19 mx-auto  main-heading ">
+          <div className="row m-0">
+            <div
+              className="col-md-7 mt-5 py-5"
+              style={{ paddingTop: "80px", paddingBottom: "80px" }}
+            >
+              <div className="pt-5">
+                {" "}
+                <h1 style={{ textAlign: "left" }}>
+                  {" "}
+                  Designing a <br />
+                  <span style={{ color: "#FFA500", fontWeight: "600" }}>
+                    better
+                  </span>
+                  <span> World Today</span>{" "}
+                </h1>
               </div>
-              ))}
-
+            </div>
+            {/* <ButtonD text="Our works" /> */}
           </div>
-          ))}
-        </Gallery>
+        </div>
+        {/* CLOSING OF COL-100000  */}
+        <div className="row g-0 gy-6">
+          <div className="row justify-content-center mt-5 my-5 card-boxs">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={index} // ✅ Always add a unique key when mapping
+                index={index} // ✅ Pass index for alternating layout
+                imgpath={project.imgpath}
+                title={project.title}
+                detail={project.detail}
+                tools={project.tools}
+                liveSite={project.liveSite}
+                gitRepo={project.gitRepo}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="row g-0 ">
+          <div className="col-md-10 mx-auto" data-aos="fade-up">
+            <div
+              className="col-md-5 ms-auto text-end text-dark  py-5"
+              data-aos="fade-up"
+            >
+              <span className="text-light-emphasis">
+                {" "}
+                Looking to make your mark? We will help you turn <br />
+                your project into a success story.{" "}
+              </span>
+            </div>
+
+            <div
+              className="row g-0 main-heading text-center  "
+              data-aos="fade-up"
+            >
+              <h1>
+                {" "}
+                Ready to bring your <span> ideas to</span> Life? <br />
+                We are <span> Here to help</span>{" "}
+              </h1>
+            </div>
+
+            <div className="row g-0 pb-5 " data-aos="fade-up">
+              <div className="btn-center ">
+                {" "}
+                <Link href="/contact">
+                  <Button text="Contact Us" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      {/* portfolio end */}
-      
-      <ModalVideo channel='custom' autoplay isOpen={isOpen} url={modalURL} onClose={() => setOpen(false)} />
     </Layouts>
   );
 };
+
 export default Portfolio;
-
-export async function getStaticProps() {
-  const allProjects = getSortedProjectsData();
-
-  return {
-    props: {
-      projects: allProjects
-    }
-  }
-}
